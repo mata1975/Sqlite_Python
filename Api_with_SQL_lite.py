@@ -1,6 +1,7 @@
 import sqlite3
 import sys
-
+#Sqlite path c:\\sqlite\\chinook.db
+#Database manually must started before use.
 
 def open_db_artist():
     artist_list = []
@@ -24,10 +25,7 @@ def open_db_albums():
     for rivi in member_data:
         Album_list.append(rivi)
 
-        # print("Artist with id " + str(rivi[0]) + "." + " is  =", str(rivi[1]) + ".\n")
 
-    # sulje yhteys tietonkantaa
-    # print(list)
     return Album_list
     conn.close()
 
@@ -35,7 +33,7 @@ def open_db_albums():
 def artist_id():
     artist_id = int(input("Give artist id number: "))
     jono = open_db_artist()
-    # print(jono)
+
 
     for rivi in jono:
         if artist_id == rivi[0]:
@@ -56,7 +54,7 @@ def artist_id():
 def artist_name():
     Artist_name = str(input("Give  artist name  "))
     jono = open_db_artist()
-    # print(jono)
+
     counter = 0
     for rivi in jono:
         if Artist_name == rivi[1]:
@@ -78,7 +76,7 @@ def artist_name():
 
 def album_name(name):
     jono = open_db_artist()
-    # print(jono)
+
 
     for rivi in jono:
         if name == rivi[1]:
@@ -93,8 +91,8 @@ def main():
     print("Artist in database " + str(len(number_of_artist)) + ".")
     print("")
     while True:
-        # print("Well come to use  Chinkook db\n")
-        print("Choose 1) List albums by Artist id. \nChoose 2) List Albums by artist name. \nChoose 0) for ending program.\n")
+        print("")
+        print("Actions:\n1) List albums by Artist id. \n2) List Albums by artist name. \n0) for ending program.\n")
         valinta = int(input("Your choice > "))
         if valinta == 1:
             artist_id()
