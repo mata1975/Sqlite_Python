@@ -1,0 +1,10 @@
+
+
+18.5.2023
+
+Some experiental testing how with SQlite (Python)
+I have downloaded Sqlite to my pc
+And using Chinook.db (localy)
+
+
+
